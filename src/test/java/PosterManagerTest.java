@@ -43,7 +43,7 @@ public class PosterManagerTest {
     @Test
     public void testFilmName () {
 
-        PosterManager manager = new PosterManager();
+        PosterManager manager = new PosterManager(7);
         manager.add(item1);
         manager.add(item2);
         manager.add(item3);
@@ -57,7 +57,7 @@ public class PosterManagerTest {
         manager.add(item11);
 
 
-        Poster[] expected = {item1, item2, item3, item4, item5, item6, item7, item8, item9, item10};
+        Poster[] expected = {item1, item2, item3, item4, item5, item6, item7};
         Poster[] actual = manager.findAll();
 
         Assertions.assertArrayEquals(expected, actual);

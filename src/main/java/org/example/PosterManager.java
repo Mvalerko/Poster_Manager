@@ -1,18 +1,21 @@
 package org.example;
 
 public class PosterManager {
-    int roll = this.items.length;
+    private Poster[] items = new Poster[0];
+
+   int roll;
     public PosterManager() {
 
-        roll = 10;
+        this.roll = 10;
+
     }
 
     public PosterManager(int timesRoll) {
 
-        roll = timesRoll;
+        this.roll = timesRoll;
+
     }
 
-    private Poster[] items = new Poster[0];
 /*
     public void removeByName(String filmNameOption) {
         Poster[] tmp = new Poster[items.length - 1];
@@ -29,17 +32,38 @@ public class PosterManager {
  */
 
     public void add(Poster item) {
-        Poster[] tmp = new Poster[items.length + 1];
-        for (int i = 0; i < roll; i++) {
-            tmp[i] = items[i];
-        }
-        tmp[tmp.length - 1] = item;
-        items = tmp;
 
+        Poster[] tmp = new Poster[items.length + 1];
+
+        if (items.length < roll) {
+
+            for (int i = 0; i < items.length; i++) {
+                tmp[i] = items[i];
+            }
+            tmp[tmp.length - 1] = item;
+            items = tmp;
+
+        }
     }
 
     public Poster[] findAll() {
+        /*
+        int arrLenght;
+        if (items.length != 10) {
+            arrLenght = roll;
+        } else {
+            arrLenght = 10;
+        }
+
+        items.length = arrLenght;
+
+         */
+        System.out.println("Значение roll было равно "+roll);
+        System.out.println("Длинна массива была равна "+items.length);
         return items;
     }
+
+
+
 
 }
