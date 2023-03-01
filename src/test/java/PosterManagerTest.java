@@ -57,7 +57,7 @@ public class PosterManagerTest {
         manager.add(item11);
 
 
-        Poster[] expected = {item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11,};
+        Poster[] expected = {item1, item2, item3, item4, item5, item6, item7, item8, item9, item10};
         Poster[] actual = manager.findAll();
 
         Assertions.assertArrayEquals(expected, actual);

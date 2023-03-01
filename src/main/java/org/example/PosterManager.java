@@ -1,6 +1,17 @@
 package org.example;
 
 public class PosterManager {
+    int roll = this.items.length;
+    public PosterManager() {
+
+        roll = 10;
+    }
+
+    public PosterManager(int timesRoll) {
+
+        roll = timesRoll;
+    }
+
     private Poster[] items = new Poster[0];
 /*
     public void removeByName(String filmNameOption) {
@@ -19,7 +30,7 @@ public class PosterManager {
 
     public void add(Poster item) {
         Poster[] tmp = new Poster[items.length + 1];
-        for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i < roll; i++) {
             tmp[i] = items[i];
         }
         tmp[tmp.length - 1] = item;
