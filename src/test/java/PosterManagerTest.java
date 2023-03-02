@@ -16,9 +16,7 @@ public class PosterManagerTest {
     Poster item9 = new Poster("Тайна Коко");
     Poster item10 = new Poster("Интерстеллар");
     Poster item11 = new Poster("Бойцовский клуб");
-
-
-
+    Poster item12 = new Poster("Зеленая книга");
 
 
     /*
@@ -41,7 +39,7 @@ public class PosterManagerTest {
 
      */
     @Test
-    public void testFilmName () {
+    public void findAllOption() {
 
         PosterManager manager = new PosterManager(7);
         manager.add(item1);
@@ -55,10 +53,130 @@ public class PosterManagerTest {
         manager.add(item9);
         manager.add(item10);
         manager.add(item11);
+        manager.add(item12);
 
 
         Poster[] expected = {item1, item2, item3, item4, item5, item6, item7};
         Poster[] actual = manager.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void findAllOptionOver() {
+
+        PosterManager manager = new PosterManager(12);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12};
+        Poster[] actual = manager.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void findAllDefault() {
+
+        PosterManager manager = new PosterManager();
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {item1, item2, item3, item4, item5, item6, item7, item8, item9, item10};
+        Poster[] actual = manager.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void findLastOption() {
+
+        PosterManager manager = new PosterManager(7);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {item7, item6, item5, item4, item3, item2, item1};
+        Poster[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void findLastDefault() {
+
+        PosterManager manager = new PosterManager();
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {item10, item9, item8, item7, item6, item5, item4, item3, item2, item1};
+        Poster[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void findLastOptionOver() {
+
+        PosterManager manager = new PosterManager(12);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {item12, item11, item10, item9, item8, item7, item6, item5, item4, item3, item2, item1};
+        Poster[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }

@@ -3,7 +3,9 @@ package org.example;
 public class PosterManager {
     private Poster[] items = new Poster[0];
 
-   int roll;
+    int roll;
+    Poster[] ret;
+
     public PosterManager() {
 
         this.roll = 10;
@@ -47,23 +49,29 @@ public class PosterManager {
     }
 
     public Poster[] findAll() {
-        /*
-        int arrLenght;
-        if (items.length != 10) {
-            arrLenght = roll;
-        } else {
-            arrLenght = 10;
-        }
 
-        items.length = arrLenght;
-
-         */
-        System.out.println("Значение roll было равно "+roll);
-        System.out.println("Длинна массива была равна "+items.length);
+        //System.out.println("Значение roll было равно " + roll);
+        //System.out.println("Длинна массива была равна " + items.length);
         return items;
     }
 
+    public Poster[] findLast() {
+
+        //System.out.println("Значение roll было равно " + roll);
+        //System.out.println("Длинна массива была равна " + items.length);
+
+        this.ret = new Poster[items.length];
 
 
+        for (int i = 0; i < items.length; i++) {
+            ret[items.length - 1 - i] = items[i];
+        }
+
+        //for (int i = 0; i < items.length; i++) {
+        //   items[i] = ret[i];
+        //}
+
+        return this.ret;
+    }
 
 }
