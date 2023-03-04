@@ -61,6 +61,76 @@ public class PosterManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void findAllOptionZero() {
+
+        PosterManager manager = new PosterManager(0);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {};
+        Poster[] actual = manager.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void findAllOptionOne() {
+
+        PosterManager manager = new PosterManager(1);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {item1};
+        Poster[] actual = manager.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void findAllOptionNegative() {
+
+        PosterManager manager = new PosterManager(-1);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {};
+        Poster[] actual = manager.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
     @Test
     public void findAllOptionOver() {
