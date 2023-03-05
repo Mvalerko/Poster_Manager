@@ -4,6 +4,7 @@ public class PosterManager {
     private Poster[] items = new Poster[0];
 
     int roll;
+    //Я не нашел других способов куда то записать обратный массив. Локальная переменная не стала работать.
     Poster[] ret;
 
     public PosterManager() {
@@ -17,7 +18,7 @@ public class PosterManager {
         this.roll = timesRoll;
 
     }
-
+//Это не мусор. Я оставляю пример рабочего метода исключения ячейки из массива на будущее
 /*
     public void removeByName(String filmNameOption) {
         Poster[] tmp = new Poster[items.length - 1];
@@ -37,15 +38,11 @@ public class PosterManager {
 
         Poster[] tmp = new Poster[items.length + 1];
 
-        if (items.length < roll) {
-
-            for (int i = 0; i < items.length; i++) {
-                tmp[i] = items[i];
-            }
-            tmp[tmp.length - 1] = item;
-            items = tmp;
-
+        for (int i = 0; i < items.length; i++) {
+            tmp[i] = items[i];
         }
+        tmp[tmp.length - 1] = item;
+        items = tmp;
     }
 
     public Poster[] findAll() {
@@ -60,18 +57,15 @@ public class PosterManager {
         //System.out.println("Значение roll было равно " + roll);
         //System.out.println("Длинна массива была равна " + items.length);
 
-        this.ret = new Poster[items.length];
+        this.ret = new Poster[roll];
 
-
-        for (int i = 0; i < items.length; i++) {
-            ret[items.length - 1 - i] = items[i];
+        for (int i = 0; i < roll; i++) {
+            ret[i] = items[items.length - 1 - i];
         }
 
         //for (int i = 0; i < items.length; i++) {
         //   items[i] = ret[i];
         //}
-
         return this.ret;
     }
-
 }
