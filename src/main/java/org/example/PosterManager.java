@@ -3,19 +3,30 @@ package org.example;
 public class PosterManager {
     private Poster[] items = new Poster[0];
 
-    int roll;
-    //Я не нашел других способов куда то записать обратный массив. Локальная переменная не стала работать.
-    Poster[] ret;
+    private int roll;
+
+    public int getRoll() {
+        return roll;
+    }
+
+    public void setRoll(int newNumberOfRolls) {
+        if (newNumberOfRolls < 0) {
+            return;
+        }
+        if (newNumberOfRolls >= 0) {
+            roll = newNumberOfRolls;
+        }
+    }
 
     public PosterManager() {
 
-        this.roll = 10;
+        setRoll(10);
 
     }
 
     public PosterManager(int timesRoll) {
 
-        this.roll = timesRoll;
+        setRoll(timesRoll);
 
     }
 //Это не мусор. Я оставляю пример рабочего метода исключения ячейки из массива на будущее
@@ -53,11 +64,9 @@ public class PosterManager {
     }
 
     public Poster[] findLast() {
+        Poster[] ret;
 
-        //System.out.println("Значение roll было равно " + roll);
-        //System.out.println("Длинна массива была равна " + items.length);
-
-        this.ret = new Poster[roll];
+        ret = new Poster[roll];
 
         for (int i = 0; i < roll; i++) {
             ret[i] = items[items.length - 1 - i];
@@ -66,6 +75,8 @@ public class PosterManager {
         //for (int i = 0; i < items.length; i++) {
         //   items[i] = ret[i];
         //}
-        return this.ret;
+        //System.out.println("Значение roll было равно " + roll);
+        //System.out.println("Длинна массива была равна " + items.length);
+        return ret;
     }
 }

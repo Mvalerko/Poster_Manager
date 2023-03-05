@@ -205,7 +205,9 @@ public class PosterManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    /*@Test
+    /*
+    @Test
+
     public void findLastOptionNegative() {
 
         PosterManager manager = new PosterManager(-1);
@@ -223,11 +225,13 @@ public class PosterManagerTest {
         manager.add(item12);
 
 
-        Poster[] expected = {};
+        int expected = -1;
         Poster[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
      */
+
+
 }
