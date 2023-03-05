@@ -135,6 +135,29 @@ public class PosterManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
     @Test
+    public void findLastOptionOverItemL() {
+
+        PosterManager manager = new PosterManager(13);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
+        manager.add(item8);
+        manager.add(item9);
+        manager.add(item10);
+        manager.add(item11);
+        manager.add(item12);
+
+
+        Poster[] expected = {item12, item11, item10, item9, item8, item7, item6, item5, item4, item3, item2, item1};
+        Poster[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
     public void findLastOptionPreAll() {
 
         PosterManager manager = new PosterManager(11);
@@ -205,7 +228,7 @@ public class PosterManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    /*
+
     @Test
 
     public void findLastOptionNegative() {
@@ -225,13 +248,13 @@ public class PosterManagerTest {
         manager.add(item12);
 
 
-        int expected = -1;
+        Poster[] expected = {};
         Poster[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
-     */
+
 
 
 }

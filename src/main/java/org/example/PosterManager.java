@@ -66,10 +66,17 @@ public class PosterManager {
     public Poster[] findLast() {
         Poster[] ret;
 
-        ret = new Poster[roll];
+        if (roll > items.length) {
+            ret = new Poster[items.length];
+            for (int i = 0; i < items.length; i++) {
+                ret[i] = items[items.length - 1 - i];
+            }
 
-        for (int i = 0; i < roll; i++) {
-            ret[i] = items[items.length - 1 - i];
+        } else {
+            ret = new Poster[roll];
+            for (int i = 0; i < roll; i++) {
+                ret[i] = items[items.length - 1 - i];
+            }
         }
 
         //for (int i = 0; i < items.length; i++) {
